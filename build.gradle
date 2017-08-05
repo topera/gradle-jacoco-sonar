@@ -1,33 +1,14 @@
 // tested with gradle 3.5.1
-apply plugin: 'java'
-
-// to apply the plugin "org.springframework.boot" we need first to
-// specify the dependency of "spring-boot-gradle-plugin"
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.6.RELEASE")
-    }
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '1.5.6.RELEASE'
 }
-apply plugin: 'org.springframework.boot'
 
 repositories {
-    mavenCentral()
-}
-
-jar {
-    baseName = 'gradle-rest-server-spring'
-    version =  '0.1.0'
+    jcenter()
 }
 
 dependencies {
     // allows usage of annotations like @RestController and much more!
     compile("org.springframework.boot:spring-boot-starter-web")
 }
-
-
-//apply plugin: 'war'
-//version = "1.0"
-//description = "Spring Rest Hello World"
