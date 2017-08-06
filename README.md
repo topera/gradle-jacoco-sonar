@@ -12,6 +12,10 @@ Test using WAR
 
 Note: This example is already configured to have context root as "/" in JBoss, due to the file src/main/webapp/WEB-INF/jboss-web.xml
 
+Extra tip:
+To deploy in AWS, just create a new Application in Elastic Beanstalk.
+Then create a new web server Environment, of platform Tomcat.
+
 Tech Stack
 * Spring Boot 1.5.6
 * IntelliJ IDEA 2016.1.4
