@@ -3,10 +3,14 @@
 This hello world is a Rest Server created with SpringBoot (configured with Gradle),
 that can be deployed as a WAR file
 
-How to test
-* $ cd gradle-rest-server-spring
-* TODO
-* Access: http://localhost:8080/test
+Test using WAR
+* $ cd gradle-rest-server-spring-war
+* $ gradle war
+* Deploy war generated in ./build/libs/hello-0.1.war
+* If you are using JBoss, please access http://localhost:8080/test
+* In other servers, please access http://localhost:8080/hello-0.1/test
+
+Note: This example is already configured to have context root as "/" in JBoss, due to the file src/main/webapp/WEB-INF/jboss-web.xml
 
 Tech Stack
 * Spring Boot 1.5.6
