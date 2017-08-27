@@ -9,6 +9,7 @@ Test using WAR
 * Deploy war generated in ./build/libs/hello-0.1.war
 * If you are using Wildfly/JBoss, please access http://localhost:8080/test
 * In other servers, please access http://localhost:8080/hello-0.1/test
+* The index.html page also works, in http://localhost:8080
 
 Note: This example is already configured to have context root as "/" in Wildfly/JBoss, due to the file src/main/webapp/WEB-INF/jboss-web.xml
 
