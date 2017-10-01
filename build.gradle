@@ -1,24 +1,19 @@
-// tested with gradle 3.5.1
+// tested with gradle 4.0
 plugins {
     id 'java'
-    id 'war'
-    id 'org.springframework.boot' version '1.5.6.RELEASE'
+    id 'jacoco'
+    id 'org.sonarqube' version "2.5"
 }
 
 repositories {
     jcenter()
 }
 
-// this block is optional
-war {
-    baseName = 'hello'
-    version =  '0.1'
+dependencies {
+    compile 'junit:junit:4.12'
 }
 
-dependencies {
-    // allows usage of annotations like @RestController and much more!
-    compile("org.springframework.boot:spring-boot-starter-web")
-    // tomcat doesn't need to be embedded into WAR. So, we specify that this will be provided at runtime by the server
-    // Note: this reduces the WAR size in 4MB
-    providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
+jacocoTestReport {
+    // we are forcing the execution of 'test' before the execution of 'jacocoTestReport'
+    dependsOn test
 }
